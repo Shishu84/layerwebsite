@@ -1,0 +1,96 @@
+/* ==================== WHATSAPP BUTTON STYLE ==================== */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366; /* WhatsApp Green */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000; /* Ensure it floats on top of everything */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Remove underline */
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e; /* Darker green on hover */
+    color: white;
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Optional: Pulse Animation to catch attention */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float {
+    animation: pulse 2s infinite;
+}
+
+/* ==================== MOBILE RESPONSIVENESS ==================== */
+
+/* Rules for Tablets and Mobile Phones (Screens smaller than 992px) */
+@media (max-width: 991px) {
+    
+    /* 1. Make the Hero Text smaller so it fits */
+    .display-3, .display-4 {
+        font-size: 2.5rem !important; /* Shrink from 4rem to 2.5rem */
+    }
+    
+    .lead {
+        font-size: 1.1rem; /* Slightly smaller body text */
+    }
+
+    /* 2. Adjust the Hero Banner Height */
+    /* On desktop it's fixed height, on mobile let it grow with text */
+    header.bg-dark {
+        min-height: auto !important; 
+        padding-top: 100px !important; /* Space for the fixed navbar */
+        padding-bottom: 50px !important;
+    }
+
+    /* 3. Reduce Section Spacing */
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    /* 4. Fix Navbar toggle alignment */
+    .navbar-toggler {
+        border-color: rgba(255,255,255,0.5);
+    }
+}
+
+/* Rules for very small phones (Screens smaller than 576px) */
+@media (max-width: 576px) {
+    
+    /* Center text on mobile for better look */
+    .hero-section, header {
+        text-align: center;
+    }
+    
+    /* Make buttons stack vertically instead of side-by-side */
+    .btn-lg {
+        width: 100%;       /* Full width button */
+        margin-bottom: 10px; /* Space between buttons */
+        margin-right: 0 !important; /* Remove side margin */
+    }
+
+    /* Move the WhatsApp button slightly up so it doesn't cover footer links */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
